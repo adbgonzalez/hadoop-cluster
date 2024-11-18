@@ -24,26 +24,6 @@ services:
       - datanode_data:/usr/local/hadoop/hdfs/datanode
     command: hdfs datanode
 
-  datanode-2:
-    image: hadoop-ubuntu:1.0
-    container_name: datanode-2
-    hostname: datanode-2
-    networks:
-      - hadoop
-    volumes:
-      - datanode_data:/usr/local/hadoop/hdfs/datanode
-    command: hdfs datanode
-
-  datanode-3:
-    image: hadoop-ubuntu:1.0
-    container_name: datanode-3
-    hostname: datanode-3
-    networks:
-      - hadoop
-    volumes:
-      - datanode_data:/usr/local/hadoop/hdfs/datanode
-    command: hdfs datanode
-
   resourcemanager:
     image: hadoop-ubuntu:1.0
     container_name: resourcemanager
