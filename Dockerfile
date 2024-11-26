@@ -42,7 +42,7 @@ COPY mapred-site.xml $HADOOP_HOME/etc/hadoop/
 COPY yarn-site.xml $HADOOP_HOME/etc/hadoop/
 
 # Formatear el Namenode (solo necesario en el nodo maestro)
-RUN $HADOOP_HOME/bin/hdfs namenode -format
+#RUN $HADOOP_HOME/bin/hdfs namenode -format
 
 # Exponer puertos de Hadoop
 EXPOSE 8088 8042 50070 50075 50090 8020 9000

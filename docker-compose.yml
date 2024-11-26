@@ -11,8 +11,10 @@ services:
     networks:
       - hadoop
     volumes:
-      - namenode_data:/usr/local/hadoop/hdfs/namenode
-    command: hdfs namenode
+      - ./namenode_data:/usr/local/hadoop/data/namenode/
+      - ./start-hdfs.sh:/start-hdfs.sh
+    command: /bin/bash /start-hdfs.sh 
+
 
   datanode:
     image: hadoop-ubuntu:1.0
@@ -21,7 +23,7 @@ services:
     networks:
       - hadoop
     volumes:
-      - datanode_data:/usr/local/hadoop/hdfs/datanode
+      - ./datanode_data:/usr/local/hadoop/data/datanode/
     command: hdfs datanode
 
   resourcemanager:
